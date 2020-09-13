@@ -10,13 +10,8 @@ from sklearn.metrics import classification_report
 from pathlib import Path
 from utils.process_images import *
 from utils.process_data import *
-from tabulate import tabulate
 import matplotlib.pyplot as plt
-
-
-def pdtabulate(df):
-
-    return tabulate(df,headers='keys',tablefmt='psql')
+import pickle
 
 
 data_dir = Path(r'D:\Docs\Python_code\ParkinsonsSketch\178338_401677_bundle_archive\drawings')
@@ -104,7 +99,7 @@ for activity in activities:
     print("[INFO] evaluating...")
     rf_preds = rf_cls.predict(X_test)
     rf_probs = rf_cls.predict_proba(X_test)
-    rf_probs_max = np.array([max(x,y) for x,y in rf_probs]).ravel()
+    rf_probs_max = np.array([max(x, y) for x, y in rf_probs]).ravel()
     lr_preds = lr_cls.predict(X_test)
     lr_probs = lr_cls.predict_proba(X_test)
     lr_probs_max = np.array([max(x, y) for x, y in lr_probs]).ravel()
@@ -123,4 +118,10 @@ for activity in activities:
     rfc_disp = plot_roc_curve(rf_cls, X_test, y_test, ax=ax, alpha=0.8)
     lr_disp = plot_roc_curve(lr_cls, X_test, y_test, ax=ax, alpha=0.8)
     plt.show()
+
+    # serialize model
+    # print("[INFO] saving model to disk...")
+    # f = open(f'models\\rf_{activity}.pickle', "wb")
+    # f.write(pickle.dumps(rf_cls))
+    # f.close()
 

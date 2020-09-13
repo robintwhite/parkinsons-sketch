@@ -7,6 +7,7 @@ from skimage.morphology import closing
 from skimage.morphology import medial_axis
 from skimage.morphology import skeletonize
 from skimage import draw
+from skimage import exposure
 from scipy import ndimage
 import numpy as np
 
@@ -289,3 +290,11 @@ def unpad(dens, pad):
 
     return pdens
 
+
+# Contrast stretching
+def contrast_stretch(img):
+    p2, p98 = np.percentile(img, (2, 98))
+    img_rescale = exposure.rescale_intensity(img, in_range=(p2, p98))
+    # for channel in range(img.shape[2]):  # equalizing each channel
+    #     img[:, :, channel] = exposure.equalize_hist(img[:, :, channel])
+    return img_rescale

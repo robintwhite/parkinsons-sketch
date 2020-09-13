@@ -2,6 +2,10 @@ from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import numpy as np
 import copy
+from tabulate import tabulate
+
+def pdtabulate(df):
+    return tabulate(df,headers='keys',tablefmt='psql')
 
 def create_interactions(ndata):
     data_old = copy.deepcopy(ndata)
