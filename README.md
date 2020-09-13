@@ -6,7 +6,8 @@
  * Trained convolutional NN model from scratch. Architecture in line with mini VGG. Conv followed by dense.
 <br>
 
-Link to Medium [post](https://medium.com/p/classifying-parkinsons-disease-through-image-analysis-2e7a152fafc9?source=email-c5eb85d3a614--writer.postDistributed&sk=e14a3373451cdf1399605017bf662c05)
+Link to Medium post. [Part 1](https://medium.com/p/classifying-parkinsons-disease-through-image-analysis-2e7a152fafc9?source=email-c5eb85d3a614--writer.postDistributed&sk=e14a3373451cdf1399605017bf662c05)
+[Part 2](https://medium.com/p/classifying-parkinsons-disease-through-image-analysis-part-2-ddbbf05aac21?source=email-c5eb85d3a614--writer.postDistributed&sk=23ac3ea7119873657c346355ea0c487e)
 
 <br>
 
