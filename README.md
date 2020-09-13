@@ -11,6 +11,7 @@ Link to Medium [post](https://medium.com/p/classifying-parkinsons-disease-throug
 <br>
 ![alloneplot](./images/all_one_plot.png)
 <br>
+
 Create conda environment: 
 ```
 conda env create -f parkinsons-sketch.yml
